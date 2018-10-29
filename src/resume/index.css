@@ -1,0 +1,32 @@
+@media print {
+    .screenOnly {
+        display: none !important;
+    }
+
+    p, h1, h2, h3, h4, h5, h6 {
+        page-break-inside: avoid;
+    }
+}
+
+@media screen {
+    .printOnly {
+        display: none !important;
+    }
+}
+
+@page {
+    margin: 0;
+}
+
+.gutter {
+    margin-right: 24px;
+}
+
+body {
+    overflow-x: hidden;
+    margin: 0;
+}
+
+.printBackground {
+    -webkit-print-color-adjust: exact;
+}

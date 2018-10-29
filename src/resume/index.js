@@ -1,0 +1,54 @@
+import React, {Component} from 'react';
+import withStyles from "@material-ui/core/styles/withStyles";
+import './index.css';
+import Header from "./Header";
+import Education from "./Education";
+import Experience from "./Experience";
+import Projects from "./Projects";
+import Skills from "./Skills";
+import Typography from "@material-ui/core/Typography/Typography";
+
+
+const styles = (theme) => ({
+    rowWrap: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        margin: theme.spacing.unit,
+    },
+    leftCol: {
+        flex: 1,
+        minWidth: '300px',
+        margin: theme.spacing.unit,
+    },
+    rightCol: {
+        flex: 3,
+        minWidth: '300px',
+        margin: theme.spacing.unit,
+    }
+});
+
+class Resume extends Component {
+    render() {
+        const {classes} = this.props;
+        return (
+            <div>
+                <Header />
+                <div className={classes.rowWrap}>
+                    <div className={classes.leftCol}>
+                        <Skills />
+                        <Education/>
+                    </div>
+                    <div className={classes.rightCol}>
+                        <Projects />
+                        <Experience />
+                    </div>
+                </div>
+                <Typography variant="caption">
+                    This résumé is a React app.
+                </Typography>
+            </div>
+        );
+    }
+}
+
+export default withStyles(styles)(Resume);
