@@ -25,7 +25,7 @@ deploy:
     - KEYFILE=`mktemp`
     - echo "$DEPLOY_KEY" > $KEYFILE
     - chmod 600 $KEYFILE
-    - rsync -avz -e "ssh -i $KEYFILE -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -p 2222" public web@vaporwave.derphost.com:/home/web/vanderpot.com/resume
+    - rsync -avz -e "ssh -i $KEYFILE -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -p 2222" public/* web@vaporwave.derphost.com:/home/web/vanderpot.com/resume
     - rm $KEYFILE
   only:
     - master # run on master branch
