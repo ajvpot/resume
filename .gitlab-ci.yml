@@ -14,7 +14,7 @@ before_script:
 build:
   stage: build
   script:
-    - CI=false npm run build  # fuck cra
+    - CI=false npm run build
     - rm -rf public
     - mv build public
   artifacts:
