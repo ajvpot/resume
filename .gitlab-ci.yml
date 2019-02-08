@@ -23,7 +23,7 @@ deploy:
   image: instrumentisto/rsync-ssh
   script:
     - KEYFILE=`mktemp`
-    - echo ${DEPLOY_KEY} > $KEYFILE
+    - echo "$DEPLOY_KEY" > $KEYFILE
     - chmod 600 $KEYFILE
     - rsync -avz -e "ssh -i $KEYFILE -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -p 2222" public web@vaporwave.derphost.com:/home/web/vanderpot.com/resume
     - rm $KEYFILE
