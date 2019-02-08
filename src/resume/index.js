@@ -44,7 +44,7 @@ class Resume extends Component {
                     </div>
                 </div>
                 <Typography variant="caption">
-                    This résumé is a React app.
+                    This résumé is a React app. It is continuously deployed with GitLab CI.
                 </Typography>
             </div>
         );
