@@ -19,7 +19,7 @@ const experienceData = [
     {
         title: 'Frontend Software Engineer',
         company: 'GE Digital',
-        time: '2018',
+        time: '2018 - 2019',
         description: 'Created modular components for use in a suite of applications. Led several code and product quality initiatives. Created automatically generated documentation for component catalogs and a self-generating React.js Icon package.'
     },
     {
