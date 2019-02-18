@@ -23,7 +23,7 @@ const experienceData = [
         description: 'Created modular components for use in a suite of applications. Led several code and product quality initiatives. Created automatically generated documentation for component catalogs and a self-generating React.js Icon package.'
     },
     {
-        title: 'Freelance Software Engineer',
+        title: 'Software Engineering Consultant',
         company: 'Vanderpot LLC',
         time: '2012 - 2018',
         description: 'Worked closely with clients to develop solutions from idea to final product. Worked with clients through all stages of the SDLC to ensure satisfaction.'
