@@ -18,11 +18,11 @@ const styles = {
 const skillsData = [
     {
         header: 'Programming Languages',
-        body: 'Python (Twisted, Flask), JavaScript (React, Electron, Node.JS), Bash, HTML, Go, SQL, PHP',
+        body: 'Python (Twisted, Flask), Go, JavaScript (React, Electron, Node.JS), Bash, SQL, HTML, PHP',
     },
     {
-        header: 'Operating Systems',
-        body: 'Linux, macOS, Windows',
+        header: 'Software',
+        body: 'GitLab CI, Jenkins, Docker, Kubernetes, Helm, Azure, GCP, Debian-based Linux, macOS, Windows',
     },
     {
         header: 'Hardware',
