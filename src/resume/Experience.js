@@ -20,7 +20,7 @@ const experienceData = [
         title: 'Frontend Software Engineer',
         company: 'GE Digital',
         time: '2018 - 2019',
-        description: 'Created modular components for use in a suite of applications. Led several code and product quality initiatives. Created automatically generated documentation for component catalogs and a self-generating React.js Icon package.'
+        description: 'Created React components to be consumed by a suite of applications. Led several code and product quality initiatives. Created automatically generated documentation for component catalogs and a self-generating React.js Icon package. Created and maintained a fork of create-react-app to simplify bootstrapping of new projects.'
     },
     {
         title: 'Software Engineering Consultant',
@@ -33,18 +33,6 @@ const experienceData = [
         company: 'VoxelCore',
         time: '2013 - 2014',
         description: 'Assisted with development of a cleanroom implementation of the Minecraft server using Python and Twisted. Contributed to developing heuristic analysis tools to prevent unauthorized game modification.'
-    },
-    {
-        title: 'Volunteer Systems Administrator',
-        company: 'Avolition IRC',
-        time: '2010 - 2016',
-        description: 'Managed software updates and configuration of IRC hub and leaf nodes. Developed custom system for UnrealIRCD configuration generation and distribution and a custom IRC services package written with the Twisted framework that implements the UnrealIRCD link protocol.'
-    },
-    {
-        title: 'Vocalist',
-        company: 'San Antonio Chamber Choir',
-        time: '2016 - 2018',
-        description: 'Used musical skills to collaborate with a team of professional artists with the goal of creating a positive musical experience for audiences.'
     },
 ];
 
