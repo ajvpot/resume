@@ -35,9 +35,9 @@ const experienceData = [
         ],
         description: <ul style={{margin:0}}>
           <li>Created React components to be consumed by a suite of applications.</li>
-          <li>Led several code and product quality initiatives.</li>
           <li>Created automatically generated documentation for component catalogs and a self-generating React.js Icon package.</li>
           <li>Maintained a fork of create-react-app to simplify bootstrapping of new projects.</li>
+          <li>Created and maintained Kubernetes deployment configuration files.</li>
           </ul>,
     },
     {
