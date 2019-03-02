@@ -14,7 +14,7 @@ const styles = (theme) => ({
         fontWeight: '500',
     },
     chip: {
-      marginRight: theme.spacing.unit,
+      marginRight: theme.spacing.unit / 2,
     }
 });
 
