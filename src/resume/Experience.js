@@ -53,8 +53,9 @@ const experienceData = [
             label: 'Go',
             color: 'primary',
           },
-          {label: 'Arduino'},
+          {label: 'Flask'},
           {label: 'jQuery'},
+          {label: 'Arduino'},
           {label: 'Docker'},
         ],
         description: <ul style={{margin:0}}>

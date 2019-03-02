@@ -22,7 +22,7 @@ const skillsData = [
     },
     {
         header: 'Software',
-        body: 'GitLab CI, Docker, Kubernetes, Helm, Azure, GCP, Debian-based Linux, macOS, Windows',
+        body: 'Git, GitLab CI, Docker, Kubernetes, Helm, Azure, GCP, Debian-based Linux, macOS, Windows',
     },
     {
         header: 'Hardware',
