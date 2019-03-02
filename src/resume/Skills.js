@@ -18,7 +18,7 @@ const styles = {
 const skillsData = [
     {
         header: 'Programming Languages',
-        body: 'Python (Twisted, Flask), Go, JavaScript (React, Electron, Node.JS), Bash, SQL, HTML, PHP',
+        body: 'Python (Twisted, Flask), Go, JavaScript (React, Electron, Node.js), Bash, SQL, HTML, PHP',
     },
     {
         header: 'Software',

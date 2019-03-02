@@ -29,7 +29,7 @@ const experienceData = [
             label: 'React',
             color: 'primary',
           },
-          {label: 'Node.JS'},
+          {label: 'Node.js'},
           {label: 'GitLab CI'},
           {label: 'Kubernetes'},
           {label: 'Helm'},
