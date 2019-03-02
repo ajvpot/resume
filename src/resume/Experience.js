@@ -37,6 +37,7 @@ const experienceData = [
           <li>Created React components to be consumed by a suite of applications.</li>
           <li>Created automatically generated documentation for component catalogs and a self-generating React.js Icon package.</li>
           <li>Maintained a fork of create-react-app to simplify bootstrapping of new projects.</li>
+          <li>Created CI/CD jobs for frontend and backend applications.</li>
           <li>Created and maintained Kubernetes deployment configuration files.</li>
           </ul>,
     },
@@ -59,8 +60,8 @@ const experienceData = [
           {label: 'Docker'},
         ],
         description: <ul style={{margin:0}}>
-        <li>Worked closely with clients to develop solutions from idea to final product.</li>
-        <li>Worked with clients through all stages of the SDLC to ensure satisfaction.</li>
+        <li>Worked with clients to develop solutions from idea to final product.</li>
+        <li>Designed several web applications and maintained WordPress blogs.</li>
         </ul>,
     },
     {
