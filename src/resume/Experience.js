@@ -33,11 +33,11 @@ const experienceData = [
           {label: 'Kubernetes'},
           {label: 'Helm'},
         ],
-        description: <ul style={{margin:0}}>
+        description: <ul style={{margin:0, paddingLeft: 20}}>
           <li>Created React components to be consumed by a suite of applications.</li>
           <li>Created automatically generated documentation for component catalogs and a self-generating React.js Icon package.</li>
-          <li>Maintained a fork of create-react-app to simplify bootstrapping of new projects.</li>
-          <li>Created CI/CD jobs for frontend (Angular/React) and backend (Java) applications.</li>
+          <li>Maintained a fork of create-react-app to automate bootstrapping of new projects.</li>
+          <li>Created CI/CD pipelines for frontend (Angular/React) and backend (Java) applications.</li>
           <li>Created and maintained Kubernetes deployment configuration files.</li>
           </ul>,
     },
@@ -59,7 +59,7 @@ const experienceData = [
           {label: 'Arduino'},
           {label: 'Docker'},
         ],
-        description: <ul style={{margin:0}}>
+        description: <ul style={{margin:0, paddingLeft: 20}}>
         <li>Worked with clients to develop solutions from idea to final product.</li>
         <li>Designed several web applications and maintained WordPress blogs.</li>
         </ul>,
@@ -75,9 +75,9 @@ const experienceData = [
           },
           {label: 'Twisted'},
         ],
-        description: <ul style={{margin:0}}>
+        description: <ul style={{margin:0, paddingLeft: 20}}>
         <li>Assisted with development of a cleanroom implementation of the Minecraft server using Python and Twisted.</li>
-        <li>Contributed to developing gameplay analysis tools to prevent unauthorized game modification.</li>
+        <li>Contributed to developing automated gameplay analysis tools to prevent unauthorized game modification.</li>
         </ul>,
     },
 ];
