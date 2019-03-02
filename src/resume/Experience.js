@@ -29,10 +29,16 @@ const experienceData = [
             label: 'React',
             color: 'primary',
           },
+          {label: 'GitLab CI'},
           {label: 'Helm'},
           {label: 'Kubernetes'},
         ],
-        description: 'Created React components to be consumed by a suite of applications. Led several code and product quality initiatives. Created automatically generated documentation for component catalogs and a self-generating React.js Icon package. Created and maintained a fork of create-react-app to simplify bootstrapping of new projects.',
+        description: <ul style={{margin:0}}>
+          <li>Created React components to be consumed by a suite of applications.</li>
+          <li>Led several code and product quality initiatives.</li>
+          <li>Created automatically generated documentation for component catalogs and a self-generating React.js Icon package.</li>
+          <li>Maintained a fork of create-react-app to simplify bootstrapping of new projects.</li>
+          </ul>,
     },
     {
         title: 'Software Engineering Consultant',
@@ -44,13 +50,17 @@ const experienceData = [
             color: 'primary',
           },
           {
-            label: 'Golang',
+            label: 'Go',
             color: 'primary',
           },
           {label: 'Arduino'},
           {label: 'jQuery'},
+          {label: 'Docker'},
         ],
-        description: 'Worked closely with clients to develop solutions from idea to final product. Worked with clients through all stages of the SDLC to ensure satisfaction.',
+        description: <ul style={{margin:0}}>
+        <li>Worked closely with clients to develop solutions from idea to final product.</li>
+        <li>Worked with clients through all stages of the SDLC to ensure satisfaction.</li>
+        </ul>,
     },
     {
         title: 'Developer',
@@ -63,7 +73,10 @@ const experienceData = [
           },
           {label: 'Twisted'},
         ],
-        description: 'Assisted with development of a cleanroom implementation of the Minecraft server using Python and Twisted. Contributed to developing heuristic analysis tools to prevent unauthorized game modification.',
+        description: <ul style={{margin:0}}>
+        <li>Assisted with development of a cleanroom implementation of the Minecraft server using Python and Twisted.</li>
+        <li>Contributed to developing gameplay analysis tools to prevent unauthorized game modification.</li>
+        </ul>,
     },
 ];
 
