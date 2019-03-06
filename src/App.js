@@ -1,20 +1,10 @@
 import React, {Component} from 'react';
 import Resume from './resume';
-import {withStyles} from '@material-ui/core/styles';
 import Grid from "@material-ui/core/Grid/Grid";
 import Hidden from "@material-ui/core/Hidden/Hidden";
 
-const styles = theme => ({
-    root: {
-        ...theme.mixins.gutters(),
-        paddingTop: theme.spacing.unit * 2,
-        paddingBottom: theme.spacing.unit * 2,
-    },
-});
-
-class App extends Component {
+export default class App extends Component {
     render() {
-        const {classes} = this.props;
         return (
             <div id="app">
                 <Grid container spacing={24} className="screenOnly">
@@ -32,5 +22,3 @@ class App extends Component {
         );
     }
 }
-
-export default withStyles(styles)(App);
