@@ -1,23 +1,10 @@
-import React, {Component} from 'react';
-import withStyles from "@material-ui/core/styles/withStyles";
-import './index.css';
-import Typography from "@material-ui/core/Typography/Typography";
+import React, { Component } from 'react';
 import Section from "./util/section";
-
-const styles = {
-    row: {
-        display: 'flex',
-        flexWrap: 'wrap',
-    },
-    jobHeader: {
-        fontWeight: '500',
-    }
-};
-
+import SectionItem from "./util/sectionItem";
 
 const educationData = [
     {
-        title: 'Texas State University',
+        heading: 'Texas State University',
         time: '2015 - 2017',
         description: <React.Fragment>
             BS Sound Recording Technology (Incomplete)<br />
@@ -25,44 +12,21 @@ const educationData = [
         </React.Fragment>
     },
     {
-        title: 'Reagan High School',
+        heading: 'Reagan High School',
         time: '2011 - 2015',
         description: 'San Antonio, TX'
     },
 ];
 
-
-class Education extends Component {
-    render() {
-        const {classes} = this.props;
-        return (
-            <Section title="Education">
-                {educationData.map((e) => (
-                    <div>
-                        <div className={classes.row}>
-                            <Typography
-                                variant="subheading"
-                                style={{
-                                    flexGrow: 1,
-                                }}
-                                className={classes.jobHeader}
-                            >
-                                {e.title}
-                            </Typography>
-                            <Typography
-                                variant="subheading"
-                            >
-                                {e.time}
-                            </Typography>
-                        </div>
-                        <Typography variant="body1">
-                            {e.description}
-                        </Typography>
-                    </div>
-                ))}
-            </Section>
-        );
-    }
+export default function Education(props) {
+    return (
+        <Section title="Education">
+            {educationData.map((e) => (
+                <SectionItem
+                    {...e}
+                />
+            ))}
+        </Section>
+    )
 }
 
-export default withStyles(styles)(Education);
