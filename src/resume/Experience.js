@@ -4,8 +4,7 @@ import SectionItem from "./util/sectionItem";
 
 const experienceData = [
     {
-        heading: 'Frontend Software Engineer',
-        company: 'GE Digital',
+        heading: 'Frontend Software Engineer - GE Digital',
         time: '2018 - 2019',
         chips: [
             {
@@ -27,8 +26,7 @@ const experienceData = [
         </ul>,
     },
     {
-        heading: 'Software Engineering Consultant',
-        company: 'Vanderpot LLC',
+        heading: 'Software Engineering Consultant - Vanderpot LLC',
         time: '2012 - 2018',
         chips: [
             {
@@ -50,8 +48,7 @@ const experienceData = [
         </ul>,
     },
     {
-        heading: 'Developer',
-        company: 'VoxelCore',
+        heading: 'Developer - VoxelCore',
         time: '2013 - 2014',
         chips: [
             {
