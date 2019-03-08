@@ -11,7 +11,10 @@ const experienceData = [
                 label: 'React',
                 color: 'primary',
             },
-            { label: 'Redux' },
+            { 
+                label: 'Redux',
+                color: 'primary',
+            },
             { label: 'Node.js' },
             { label: 'GitLab CI' },
             { label: 'Kubernetes' },
