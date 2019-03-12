@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Typography from "@material-ui/core/Typography/Typography";
 import withStyles from "@material-ui/core/styles/withStyles";
 import ListItem from "@material-ui/core/ListItem/ListItem";
@@ -12,10 +12,11 @@ import DraftsIcon from '@material-ui/icons/Drafts';
 import WebIcon from '@material-ui/icons/Web';
 import PhoneIcon from '@material-ui/icons/Phone';
 import SmsIcon from '@material-ui/icons/Sms';
+import {ReactComponent as GitHubIcon} from './github.svg';
 import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction/ListItemSecondaryAction";
 import IconButton from "@material-ui/core/IconButton/IconButton";
 
-import {MobileView} from "react-device-detect";
+import { MobileView } from "react-device-detect";
 
 const styles = (theme) => ({
     row: {
@@ -30,7 +31,7 @@ const styles = (theme) => ({
 
 const contacts = [
     {
-        icon: <PhoneIcon/>,
+        icon: <PhoneIcon />,
         text: '(210) 643-0345',
         props: {
             button: true,
@@ -43,13 +44,13 @@ const contacts = [
                     component="a"
                     href="sms:+12106430345"
                 >
-                    <SmsIcon/>
+                    <SmsIcon />
                 </IconButton>
             </ListItemSecondaryAction>
         </MobileView>
     },
     {
-        icon: <DraftsIcon/>,
+        icon: <DraftsIcon />,
         text: 'alex@vanderpot.com',
         props: {
             button: true,
@@ -58,7 +59,7 @@ const contacts = [
         }
     },
     {
-        icon: <WebIcon/>,
+        icon: <WebIcon />,
         text: 'vanderpot.com',
         props: {
             button: true,
@@ -66,13 +67,21 @@ const contacts = [
             href: "https://vanderpot.com",
         }
     },
-
+    {
+        icon: <GitHubIcon />,
+        text: 'github.com/ajvpot',
+        props: {
+            button: true,
+            component: "a",
+            href: "https://github.com/ajvpot",
+        }
+    },
 ];
 
 
 class Header extends Component {
     render() {
-        const {classes} = this.props;
+        const { classes } = this.props;
         return (
             <div className={`printBackground ${classes.row}`}>
                 <div style={{
@@ -98,7 +107,7 @@ class Header extends Component {
                             <ListItemIcon>
                                 {c.icon}
                             </ListItemIcon>
-                            <ListItemText inset primary={c.text}/>
+                            <ListItemText inset primary={c.text} />
                             {c.after}
                         </ListItem>
                     )}
