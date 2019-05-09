@@ -4,7 +4,7 @@ import SectionItem from "./util/sectionItem";
 
 const experienceData = [
     {
-        heading: 'Frontend Software Engineer - GE Digital',
+        heading: 'DevOps Engineer - GE Digital',
         time: '2018 - 2019',
         chips: [
             {
@@ -26,6 +26,7 @@ const experienceData = [
             <li>Maintained a fork of create-react-app to automate bootstrapping of new projects.</li>
             <li>Created CI/CD pipelines for frontend (Angular/React) and backend (Java) applications.</li>
             <li>Created and maintained Kubernetes deployment configuration files.</li>
+            <li>Examimed web applications for security vulerabilities.</li>
         </ul>,
     },
     {
