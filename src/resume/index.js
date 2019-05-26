@@ -6,6 +6,7 @@ import Education from "./Education";
 import Experience from "./Experience";
 import Projects from "./Projects";
 import Skills from "./Skills";
+import Awards from "./Awards";
 import Typography from "@material-ui/core/Typography/Typography";
 
 
@@ -37,6 +38,7 @@ class Resume extends Component {
                     <div className={classes.leftCol}>
                         <Skills />
                         <Education/>
+                        {/*<Awards />*/}
                     </div>
                     <div className={classes.rightCol}>
                         <Projects />
