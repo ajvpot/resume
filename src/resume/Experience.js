@@ -27,8 +27,8 @@ const experienceData = [
             <li>Created React components to be consumed by a suite of applications</li>
             <li>Created CI/CD pipelines for frontend (React/AngularJS) and backend (Java) applications</li>
             <li>Created CI/CD pipeline for Kubernetes application deployments with Helm</li>
-            <li>Migrated legacy monolithic applicaiton to microservice architecture with Helm and Kubernetes</li>
-            <li>Examimed web applications for security vulerabilities</li>
+            <li>Migrated legacy monolithic application to microservice architecture with Helm and Kubernetes</li>
+            <li>Examined web applications for security vulerabilities</li>
         </ul>,
     },
     {
