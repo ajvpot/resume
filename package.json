@@ -4,10 +4,10 @@
   "private": true,
   "dependencies": {
     "classnames": "latest",
-    "react": "^16.5.1",
+    "react": "^16.14.0",
     "react-device-detect": "^1.6.1",
-    "react-dom": "^16.5.1",
-    "react-scripts": "2.1.5",
+    "react-dom": "^16.14.0",
+    "react-scripts": "4.0.3",
     "typeface-roboto": "0.0.54"
   },
   "scripts": {
