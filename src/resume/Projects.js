@@ -4,7 +4,7 @@ import SectionItem from './util/sectionItem';
 
 const researchData = [
     {
-        heading: 'Embedded LED Controller',
+        heading: 'Recipe Website (TODO)',
         description: 'Rapidly prototyped a WiFi enabled addressable LED strip driver capable of driving over 1024 pixels at 60Hz using DMA. Pixel color data is accepted using sACN/E1.31 for compatibility with professional lighting control systems.'
     },
     {
@@ -15,7 +15,7 @@ const researchData = [
 
 export default function Projects(props) {
     return (
-        <Section title="Research">
+        <Section title="Projects">
             {researchData.map((e) => (
                 <SectionItem
                     {...e}

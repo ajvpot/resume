@@ -46,8 +46,8 @@ class Resume extends Component {
                     </div>
                 </div>
                 <Typography variant="caption">
-                    This résumé is a React app. It is continuously deployed with GitLab CI.
-                    <a href="https://gitlab.vanderpot.com/vanderpot/resume">
+                    This résumé is a React app. It is continuously deployed with GitHub Actions.
+                    <a href="https://github.com/ajvpot/resume">
                         View the source code.
                     </a>
                 </Typography>

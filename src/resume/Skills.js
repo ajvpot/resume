@@ -5,7 +5,7 @@ import SectionItem from "./util/sectionItem";
 const skillsData = [
     {
         heading: 'Programming Languages',
-        description: 'Python (Twisted, Flask), Go, JavaScript (React, Redux, Electron, Node.js), Bash, SQL, HTML, PHP',
+        description: 'Go, JavaScript/TypeScript (React, Redux, Electron, Node.js), Python (Twisted, Flask), Bash, SQL, HTML, PHP',
     },
     {
         heading: 'Software',
