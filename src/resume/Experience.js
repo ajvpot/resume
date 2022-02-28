@@ -15,12 +15,15 @@ const experienceData = [
                 label: 'Distributed Systems',
                 color: 'primary',
             },
-            { label: '...' },
+            { label: 'Cadence' },
+            { label: 'Bazel' },
+            { label: 'Big Data Plumbing' },
         ],
         description: <ul style={{ margin: 0, paddingLeft: 20 }}>
-            <li>Delivered container scanning pipeline capable of performing SBOM analysis and vulnerability assessment on all containers</li>
-            <li>Owned end-to-end delivery of security content</li>
-            <li>Using Go, Cadence, openapi-generator</li>
+            <li>Owned end-to-end delivery of pipeline for performing SBOM analysis and vulnerability on containers.
+            The system has analyzed 15k containers per hour.</li>
+            <li>Built asset inventory platform capable of storing and indexing metadata for 700k assets</li>
+            <li>Owned vulnerability assessment service responsible for comparing data from scans and asset inventory with vulnerability information</li>
             <li>Responsible for company-wide response to major vulnerabilities</li>
         </ul>,
     },

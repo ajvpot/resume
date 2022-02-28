@@ -37,11 +37,11 @@ class Resume extends Component {
                 <div className={classes.rowWrap}>
                     <div className={classes.leftCol}>
                         <Skills />
+                        <Projects />
                         <Education/>
                         {/*<Awards />*/}
                     </div>
                     <div className={classes.rightCol}>
-                        <Projects />
                         <Experience />
                     </div>
                 </div>

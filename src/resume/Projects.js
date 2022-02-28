@@ -4,8 +4,12 @@ import SectionItem from './util/sectionItem';
 
 const researchData = [
     {
-        heading: 'Recipe Website (TODO)',
-        description: 'Rapidly prototyped a WiFi enabled addressable LED strip driver capable of driving over 1024 pixels at 60Hz using DMA. Pixel color data is accepted using sACN/E1.31 for compatibility with professional lighting control systems.'
+        heading: 'Recipe Aggregator',
+        description: <React.Fragment>
+            Built a recipe aggregator that indexes recipes from popular sources and enriches them with nutrition data from the USDA.
+            Output options include receipt printer and smart display.
+            The backend uses Hasura and PostgreSQL. The frontend is TypeScript/React/Apollo/Relay.
+        </React.Fragment>
     },
     {
         heading: 'Mobile Video Streaming Solution',
