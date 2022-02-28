@@ -20,9 +20,9 @@ const experienceData = [
             { label: 'Big Data Plumbing' },
         ],
         description: <ul style={{ margin: 0, paddingLeft: 20 }}>
-            <li>Owned end-to-end delivery of pipeline for performing SBOM analysis and vulnerability on containers.
-            The system has analyzed 15k containers per hour.</li>
-            <li>Built asset inventory platform capable of storing and indexing metadata for 700k assets</li>
+            <li>Owned end-to-end delivery of pipeline for performing SBOM analysis and vulnerability assessment on containers.
+            The system has analyzed over 15k containers per hour.</li>
+            <li>Built asset inventory platform that stores and indexes metadata for over 650k assets</li>
             <li>Owned vulnerability assessment service responsible for comparing data from scans and asset inventory with vulnerability information</li>
             <li>Responsible for company-wide response to major vulnerabilities</li>
         </ul>,
@@ -49,9 +49,7 @@ const experienceData = [
             <li>Maintained a fork of create-react-app to automate bootstrapping of new projects</li>
             <li>Created React components to be consumed by a suite of applications</li>
             <li>Created CI/CD pipelines for frontend (React/AngularJS) and backend (Java) applications</li>
-            <li>Created CI/CD pipeline for Kubernetes application deployments with Helm</li>
             <li>Migrated legacy monolithic application to microservice architecture with Helm and Kubernetes</li>
-            <li>Examined web applications for security vulnerabilities</li>
         </ul>,
     },
     {
