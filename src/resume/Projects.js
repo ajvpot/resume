@@ -4,7 +4,7 @@ import SectionItem from './util/sectionItem';
 
 const researchData = [
     {
-        heading: 'Recipe Aggregator',
+        heading: <React.Fragment>Recipe Aggregator (<a href={"https://cookwherever.com"}>cookwherever.com</a>)</React.Fragment>,
         description: <React.Fragment>
             Built a recipe aggregator that indexes recipes from popular sources and enriches them with nutrition data from the USDA.
             Output options include receipt printer and smart display.
