@@ -17,7 +17,6 @@ const experienceData = [
             },
             { label: 'Cadence' },
             { label: 'Bazel' },
-            { label: 'Big Data Plumbing' },
         ],
         description: <ul style={{ margin: 0, paddingLeft: 20 }}>
             <li>Owned end-to-end delivery of pipeline for performing SBOM analysis and vulnerability assessment on containers.
