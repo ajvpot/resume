@@ -4,9 +4,13 @@ import Typography from "@material-ui/core/Typography/Typography";
 import Chip from '@material-ui/core/Chip';
 
 const styles = (theme) => ({
-    row: {
+    heading: {
         display: 'flex',
         flexWrap: 'wrap',
+        //paddingBottom: theme.spacing.unit,
+    },
+    row: {
+        paddingBottom: theme.spacing.unit*2,
     },
     jobHeader: {
         fontWeight: '500',
@@ -14,6 +18,9 @@ const styles = (theme) => ({
     chip: {
         marginRight: theme.spacing.unit / 2,
         height: theme.spacing.unit * 3,
+    },
+    chipContainer: {
+        paddingBottom: theme.spacing.unit,
     }
 });
 
@@ -23,6 +30,7 @@ class SectionItem extends Component {
         return (
             <React.Fragment>
                 <div className={classes.row}>
+                <div className={classes.heading}>
                     <Typography
                         variant="subheading"
                         style={{
@@ -40,6 +48,7 @@ class SectionItem extends Component {
                         </Typography>
                     }
                 </div>
+                    <div className={classes.chipContainer}>
                 {chips && chips.map((chip) => (
                     <Chip
                         {...chip}
@@ -47,9 +56,11 @@ class SectionItem extends Component {
                         variant="outlined"
                     />
                 ))}
+                    </div>
                 <Typography variant="body1">
                     {description}
                 </Typography>
+                </div>
             </React.Fragment>
         );
     }

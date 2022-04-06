@@ -4,7 +4,7 @@ import withStyles from "@material-ui/core/styles/withStyles";
 
 const styles = theme => ({
     root: {
-        paddingBottom: theme.spacing.unit*2,
+        //paddingBottom: theme.spacing.unit*2,
     },
 });
 
