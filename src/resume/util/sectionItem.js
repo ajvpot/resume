@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import withStyles from "@material-ui/core/styles/withStyles";
 import Typography from "@material-ui/core/Typography/Typography";
 import Chip from '@material-ui/core/Chip';
@@ -13,12 +13,13 @@ const styles = (theme) => ({
     },
     chip: {
         marginRight: theme.spacing.unit / 2,
+        height: theme.spacing.unit * 3,
     }
 });
 
 class SectionItem extends Component {
     render() {
-        const { classes, heading, time, chips, description } = this.props;
+        const {classes, heading, time, chips, description} = this.props;
         return (
             <React.Fragment>
                 <div className={classes.row}>
