@@ -1,8 +1,7 @@
-name: Build and Deploy
+name: Build
 
 on:
   push:
-  pull_request:
 
 jobs:
   deploy:
