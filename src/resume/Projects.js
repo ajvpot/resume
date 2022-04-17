@@ -8,7 +8,7 @@ const researchData = [
         description: <React.Fragment>
             Built a recipe aggregator that indexes recipes from popular sources and enriches them with nutrition data from the USDA.
             Output options include receipt printer and smart display.
-            The backend uses Hasura and PostgreSQL. The frontend is TypeScript/React/Apollo/Relay.
+            The backend uses Hasura and PostgreSQL. The frontend is TypeScript/React/GraphQL.
         </React.Fragment>
     },
     {
