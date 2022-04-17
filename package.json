@@ -19,7 +19,7 @@
   "devDependencies": {
     "@material-ui/core": "3.9.4",
     "@material-ui/icons": "3.0.2",
-    "react-to-print": "2.14.5"
+    "react-to-print": "2.14.6"
   },
   "homepage": "https://vanderpot.com/resume/",
   "browserslist": [
