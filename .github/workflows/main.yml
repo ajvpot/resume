@@ -2,6 +2,9 @@ name: Build
 
 on:
   push:
+    branches:
+      - master
+  pull_request:
 
 jobs:
   build:
@@ -65,7 +68,6 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: build
-      - run: mkdir screenshots
       - name: Screenshot Website
         uses: swinton/screenshot-website@v1.x
         with:
@@ -75,24 +77,22 @@ jobs:
 
   compare-screenshot:
     runs-on: ubuntu-18.04
+    if: github.event_name == 'pull_request'
     needs:
       - build
       - screenshot
     steps:
-      - uses: dawidd6/action-download-artifact@v2
+      - uses: actions/download-artifact@v3
         with:
-          github_token: ${{secrets.GH_TOKEN}}
-          workflow: main.yml
-          workflow_conclusion: success
-          pr: ${{github.event.pull_request.number}}
           path: ours
       - name: Display structure of our files
         run: ls -R
         working-directory: ours
+      - run: mkdir theirs
       - uses: dawidd6/action-download-artifact@v2
         with:
           github_token: ${{secrets.GH_TOKEN}}
-          workflow: main.yml
+          workflow: Build
           workflow_conclusion: success
           pr: ${{github.event.pull_request.number}}
           path: theirs
