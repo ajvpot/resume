@@ -68,7 +68,6 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: build
-      - run: mkdir screenshots
       - name: Screenshot Website
         uses: swinton/screenshot-website@v1.x
         with:
@@ -83,12 +82,8 @@ jobs:
       - build
       - screenshot
     steps:
-      - uses: dawidd6/action-download-artifact@v2
+      - uses: actions/download-artifact@v3
         with:
-          github_token: ${{secrets.GH_TOKEN}}
-          workflow: main.yml
-          workflow_conclusion: success
-          pr: ${{github.event.pull_request.number}}
           path: ours
       - name: Display structure of our files
         run: ls -R
