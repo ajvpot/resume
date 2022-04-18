@@ -72,10 +72,6 @@ jobs:
           source: https://github.com/swinton/screenshot-website
           destination: screenshot-${{ matrix.width }}.png
           width: ${{ matrix.width }}
-      - uses: actions/upload-artifact@v3
-        with:
-          name: screenshots
-          path: screenshot-*.png
 
   compare-screenshot:
     runs-on: ubuntu-18.04
@@ -83,18 +79,23 @@ jobs:
       - build
       - screenshot
     steps:
-      - uses: actions/download-artifact@v3
-        with:
-          name: build
-      - uses: actions/download-artifact@v3
-        with:
-          name: screenshots
-          path: screenshots_ours
       - uses: dawidd6/action-download-artifact@v2
         with:
           github_token: ${{secrets.GH_TOKEN}}
           workflow: main.yml
           workflow_conclusion: success
           pr: ${{github.event.pull_request.number}}
-          name: screenshots
-          path: screenshots_theirs
+          path: ours
+      - name: Display structure of our files
+        run: ls -R
+        working-directory: ours
+      - uses: dawidd6/action-download-artifact@v2
+        with:
+          github_token: ${{secrets.GH_TOKEN}}
+          workflow: main.yml
+          workflow_conclusion: success
+          pr: ${{github.event.pull_request.number}}
+          path: theirs
+      - name: Display structure of target files
+        run: ls -R
+        working-directory: theirs
