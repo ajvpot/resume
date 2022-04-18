@@ -4,8 +4,11 @@ on:
   push:
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-18.04
+    outputs:
+      commit_hash: ${{ steps.save-commit-hash.outputs.commit_hash }}
+      branch_name: ${{ steps.branch-name.outputs.current_branch }}
     steps:
       - uses: actions/checkout@v3
       - name: Get branch name
@@ -32,9 +35,64 @@ jobs:
         env:
           REACT_APP_GIT_SHA: ${{ github.SHA }}
 
+      - uses: actions/upload-artifact@v3
+        with:
+          name: build
+          path: build/
+
+  deploy:
+    runs-on: ubuntu-18.04
+    if: needs.build.outputs.branch_name == 'master'
+    needs: build
+    concurrency: production
+    steps:
+      - uses: actions/download-artifact@v3
+        with:
+          name: build
       - name: Deploy
-        if: steps.branch-name.outputs.current_branch == 'master'
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GH_TOKEN }}
           publish_dir: ./build
+
+  screenshot:
+    runs-on: ubuntu-18.04
+    needs: build
+    strategy:
+      matrix:
+        width: [ 1200, 992, 768, 600 ]
+    steps:
+      - uses: actions/download-artifact@v3
+        with:
+          name: build
+      - name: Screenshot Website
+        uses: swinton/screenshot-website@v1.x
+        with:
+          source: https://github.com/swinton/screenshot-website
+          destination: screenshots/screenshot-${{ matrix.width }}.png
+          width: ${{ matrix.width }}
+      - uses: actions/upload-artifact@v3
+        with:
+          name: screenshots
+          path: screenshots/
+
+  compare-screenshot:
+    runs-on: ubuntu-18.04
+    needs:
+      - build
+      - screenshot
+    steps:
+      - uses: actions/download-artifact@v3
+        with:
+          name: build
+      - uses: actions/download-artifact@v3
+        with:
+          name: screenshots
+      - uses: dawidd6/action-download-artifact@v2
+        with:
+          github_token: ${{secrets.GH_TOKEN}}
+          workflow: main.yml
+          workflow_conclusion: success
+          pr: ${{github.event.pull_request.number}}
+          name: screenshots
+          path: target
