@@ -75,7 +75,7 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: screenshots
-          path: screenshots/
+          path: screenshot-*.png
 
   compare-screenshot:
     runs-on: ubuntu-18.04
