@@ -85,8 +85,7 @@ jobs:
       - uses: dawidd6/action-download-artifact@v2
         with:
           github_token: ${{secrets.GH_TOKEN}}
-          workflow: Build
-          workflow_conclusion: success
+          workflow: main.yml
           branch: ${{github.base_ref}}
           path: theirs
       - name: Display structure of target files
