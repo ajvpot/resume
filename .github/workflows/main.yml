@@ -87,7 +87,7 @@ jobs:
           github_token: ${{secrets.GH_TOKEN}}
           workflow: Build
           workflow_conclusion: success
-          pr: ${{github.event.pull_request.number}}
+          branch: ${{github.base_ref}}
           path: theirs
       - name: Display structure of target files
         run: ls -R
