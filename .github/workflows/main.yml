@@ -127,7 +127,7 @@ jobs:
           echo '```' >> comment-body.txt 
           for file in ours/*; do 
             name=`basename $file`
-            yarn pixelmatch ours/$name theirs/$name out/$name 0.1 >> comment-body.txt || true 
+            yarn -s pixelmatch ours/$name theirs/$name out/$name 0.1 >> comment-body.txt || true 
           done
           echo '```' >> comment-body.txt
       - uses: actions/upload-artifact@v3
