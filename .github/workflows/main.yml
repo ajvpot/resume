@@ -88,6 +88,6 @@ jobs:
         id: visual-snapshots-diff
         uses: getsentry/action-visual-snapshot@v1
         with:
-          token: ${{secrets.GH_TOKEN}}
+          githubToken: ${{secrets.GH_TOKEN}}
           snapshot-path: theirs/
           results-path: ours/
