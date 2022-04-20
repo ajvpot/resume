@@ -11,21 +11,19 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v3
+
       - name: Setup Node
         uses: actions/setup-node@v2-beta
         with:
           node-version: '17'
-      - name: Get yarn cache
+      - uses: actions/cache@v2
         id: yarn-cache
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-      - name: Cache dependencies
-        uses: actions/cache@v3
         with:
-          path: ${{ steps.yarn-cache.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-      - run: yarn install --frozen-lockfile
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+      - name: Install dependencies
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
+        run: yarn install --frozen-lockfile
 
       - run: yarn build
         env:
@@ -53,34 +51,35 @@ jobs:
 
   screenshot:
     runs-on: ubuntu-18.04
-    needs: build
+    needs:
+      - build
     steps:
       - uses: actions/checkout@v3
-      - name: Setup Node
-        uses: actions/setup-node@v2-beta
-        with:
-          node-version: '17'
-      - name: Get yarn cache
-        id: yarn-cache
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-      - name: Cache dependencies
-        uses: actions/cache@v3
-        with:
-          path: ${{ steps.yarn-cache.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-      - run: yarn install --frozen-lockfile
       - uses: actions/download-artifact@v3
         with:
           name: build
           path: build/
-      - run: |-
+      - name: Setup Node
+        uses: actions/setup-node@v2-beta
+        with:
+          node-version: '17'
+      - uses: actions/cache@v2
+        id: yarn-cache
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+      - name: Install dependencies
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
+        run: yarn install --frozen-lockfile
+      - name: "Take Screenshots"
+        run: |-
           set -x
           mkdir webroot
           mv build webroot/resume
           yarn serve -s webroot &
-          sleep 5
+          set +x
+          while ! curl --output /dev/null --silent --head --fail http://127.0.0.1:3000/; do sleep 0.1 && echo -n .; done;
+          set -x
           yarn screenshot
       - uses: actions/upload-artifact@v3
         with:
@@ -94,16 +93,41 @@ jobs:
       - build
       - screenshot
     steps:
+      - name: Setup Node
+        uses: actions/setup-node@v2-beta
+        with:
+          node-version: '17'
+      - name: Get yarn cache
+        id: yarn-cache
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: ${{ steps.yarn-cache.outputs.dir }}
+          key: ${{ runner.os }}-yarn-sc
+          restore-keys: |
+            ${{ runner.os }}-yarn-sc
       - uses: actions/download-artifact@v3
         with:
+          name: screenshots
           path: ours
-      - name: Display structure of our files
-        run: ls -R ours
       - uses: dawidd6/action-download-artifact@v2
         with:
           github_token: ${{secrets.GH_TOKEN}}
-          workflow: Build
-          branch: ${{github.base_ref}}
+          workflow: main.yml
+          name: screenshots
+          branch: ${{github.event.pull_request.base.ref}}
+          search_artifacts: true
           path: theirs
-      - name: Display structure of target files
-        run: ls -R theirs
+      - run: ls -R ours theirs
+      - run: |-
+          yarn add pixelmatch
+          mkdir out
+          for file in ours/*; do 
+            name=`basename $file`
+            yarn pixelmatch ours/$name theirs/$name out/$name 0.1
+          done
+      - uses: actions/upload-artifact@v3
+        with:
+          name: screenshot-diff
+          path: out/*.png
