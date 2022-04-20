@@ -105,7 +105,7 @@ jobs:
           github_token: ${{secrets.GH_TOKEN}}
           workflow: main.yml
           name: screenshots
-          commit: ${{github.event.pull_request.head.sha}}
+          branch: ${{github.event.pull_request.head.ref}}
           path: theirs
       - name: Display structure of target files
         run: ls -R theirs
