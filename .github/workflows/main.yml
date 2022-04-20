@@ -77,9 +77,9 @@ jobs:
           path: build/
       - run: |-
           pwd
-          ls
           mkdir webroot
           mv build webroot/resume
+          ls -R webroot
           yarn screenshot:ci
       - uses: actions/upload-artifact@v3
         with:
