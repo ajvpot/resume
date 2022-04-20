@@ -76,11 +76,12 @@ jobs:
           name: build
           path: build/
       - run: |-
-          pwd
+          set -x
           mkdir webroot
           mv build webroot/resume
-          ls -R webroot
-          yarn screenshot:ci
+          serve -s webroot &
+          sleep 5
+          yarn screenshot
       - uses: actions/upload-artifact@v3
         with:
           name: screenshots

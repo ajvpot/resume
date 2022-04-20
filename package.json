@@ -15,8 +15,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "screenshot": "node screenshots.js",
-    "screenshot:ci": "concurrently -k \"serve -s webroot\" \"yarn screenshot\""
+    "screenshot": "node screenshots.js"
   },
   "devDependencies": {
     "@material-ui/core": "3.9.4",
