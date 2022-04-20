@@ -71,6 +71,10 @@ jobs:
       - build
       - screenshot
     steps:
+      - uses: actions/download-artifact@v3
+        with:
+          name: screenshots
+          path: ours
       - uses: dawidd6/action-download-artifact@v2
         with:
           github_token: ${{secrets.GH_TOKEN}}
@@ -87,5 +91,4 @@ jobs:
         with:
           token: ${{secrets.GH_TOKEN}}
           snapshot-path: theirs/
-          action-name: main.yml
-          artifact-name: screenshots
+          results-path: ours/
