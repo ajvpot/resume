@@ -79,7 +79,7 @@ jobs:
           set -x
           mkdir webroot
           mv build webroot/resume
-          serve -s webroot &
+          yarn serve -s webroot &
           sleep 5
           yarn screenshot
       - uses: actions/upload-artifact@v3
