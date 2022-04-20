@@ -100,7 +100,7 @@ jobs:
           path: theirs
       - run: ls -R ours theirs
       - run: |-
-          yarn install pixelmatch
+          yarn add pixelmatch
           mkdir out
           for file in ours/*; do 
             yarn pixelmatch ours/$file theirs/$file out/$file 0.1
