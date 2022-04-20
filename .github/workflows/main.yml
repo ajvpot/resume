@@ -106,6 +106,7 @@ jobs:
           workflow: main.yml
           name: screenshots
           branch: ${{github.event.pull_request.head.ref}}
+          search_artifacts: true
           path: theirs
       - name: Display structure of target files
         run: ls -R theirs
