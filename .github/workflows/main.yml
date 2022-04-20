@@ -9,23 +9,15 @@ on:
 jobs:
   build:
     runs-on: ubuntu-18.04
-    outputs:
-      commit_hash: ${{ steps.save-commit-hash.outputs.commit_hash }}
-      branch_name: ${{ steps.branch-name.outputs.current_branch }}
     steps:
       - uses: actions/checkout@v3
-      - name: Get branch name
-        id: branch-name
-        uses: tj-actions/branch-names@v5.2
       - name: Setup Node
         uses: actions/setup-node@v2-beta
         with:
-          node-version: '14'
-
+          node-version: '17'
       - name: Get yarn cache
         id: yarn-cache
         run: echo "::set-output name=dir::$(yarn cache dir)"
-
       - name: Cache dependencies
         uses: actions/cache@v3
         with:
@@ -34,6 +26,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-
       - run: yarn install --frozen-lockfile
+
       - run: yarn build
         env:
           REACT_APP_GIT_SHA: ${{ github.SHA }}
@@ -61,19 +54,38 @@ jobs:
   screenshot:
     runs-on: ubuntu-18.04
     needs: build
-    strategy:
-      matrix:
-        width: [ 1200, 992, 768, 600 ]
     steps:
+      - uses: actions/checkout@v3
+      - name: Setup Node
+        uses: actions/setup-node@v2-beta
+        with:
+          node-version: '17'
+      - name: Get yarn cache
+        id: yarn-cache
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: ${{ steps.yarn-cache.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      - run: yarn install --frozen-lockfile
       - uses: actions/download-artifact@v3
         with:
           name: build
-      - name: Screenshot Website
-        uses: swinton/screenshot-website@v1.x
+          path: build/
+      - run: |-
+          set -x
+          mkdir webroot
+          mv build webroot/resume
+          yarn serve -s webroot &
+          sleep 5
+          yarn screenshot
+      - uses: actions/upload-artifact@v3
         with:
-          source: https://github.com/swinton/screenshot-website
-          destination: screenshot-${{ matrix.width }}.png
-          width: ${{ matrix.width }}
+          name: screenshots
+          path: screenshot-*.png
 
   compare-screenshot:
     runs-on: ubuntu-18.04
@@ -86,16 +98,12 @@ jobs:
         with:
           path: ours
       - name: Display structure of our files
-        run: ls -R
-        working-directory: ours
-      - run: mkdir theirs
+        run: ls -R ours
       - uses: dawidd6/action-download-artifact@v2
         with:
           github_token: ${{secrets.GH_TOKEN}}
           workflow: Build
-          workflow_conclusion: success
-          pr: ${{github.event.pull_request.number}}
+          branch: ${{github.base_ref}}
           path: theirs
       - name: Display structure of target files
-        run: ls -R
-        working-directory: theirs
+        run: ls -R theirs
