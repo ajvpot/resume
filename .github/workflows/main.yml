@@ -97,13 +97,15 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           path: ours
+          name: screenshots
       - name: Display structure of our files
         run: ls -R ours
       - uses: dawidd6/action-download-artifact@v2
         with:
           github_token: ${{secrets.GH_TOKEN}}
-          workflow: Build
-          branch: ${{github.base_ref}}
+          workflow: main.yml
+          name: screenshots
+          pr: ${{github.event.pull_request.number}}
           path: theirs
       - name: Display structure of target files
         run: ls -R theirs
