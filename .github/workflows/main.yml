@@ -72,6 +72,20 @@ jobs:
     needs:
       - build
     steps:
+      - name: Setup Node
+        uses: actions/setup-node@v2-beta
+        with:
+          node-version: '17'
+      - name: Get yarn cache
+        id: yarn-cache
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: ${{ steps.yarn-cache.outputs.dir }}
+          key: ${{ runner.os }}-yarn-sc
+          restore-keys: |
+            ${{ runner.os }}-yarn-sc
       - uses: actions/download-artifact@v3
         with:
           name: screenshots
@@ -85,10 +99,13 @@ jobs:
           search_artifacts: true
           path: theirs
       - run: ls -R ours theirs
-      - name: Diff snapshots
-        id: visual-snapshots-diff
-        uses: getsentry/action-visual-snapshot@v1
+      - run: |-
+          yarn install pixelmatch
+          mkdir out
+          for file in ours/*; do 
+            yarn pixelmatch ours/$file theirs/$file out/$file 0.1
+          done
+      - uses: actions/upload-artifact@v3
         with:
-          githubToken: ${{secrets.GH_TOKEN}}
-          snapshot-path: theirs/
-          results-path: ours/
+          name: screenshot-diff
+          path: out/*.png
