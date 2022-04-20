@@ -76,7 +76,8 @@ jobs:
           name: build
           path: build/
       - run: |-
-          ls -R
+          pwd
+          ls
           mkdir webroot
           mv build webroot/resume
           yarn screenshot:ci
