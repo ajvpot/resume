@@ -69,7 +69,6 @@ jobs:
     if: github.event_name == 'pull_request'
     needs:
       - build
-      - screenshot
     steps:
       - uses: actions/download-artifact@v3
         with:
