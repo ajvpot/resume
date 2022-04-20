@@ -108,6 +108,7 @@ jobs:
         id: visual-snapshots-diff
         uses: getsentry/action-visual-snapshot@v1
         with:
+          token: ${{secrets.GH_TOKEN}}
           snapshot-path: theirs/
           action-name: main.yml
           artifact-name: screenshots
