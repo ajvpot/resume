@@ -125,7 +125,7 @@ jobs:
           mkdir out
           for file in ours/*; do 
             name=`basename $file`
-            yarn pixelmatch ours/$name theirs/$name out/$name 0.1
+            yarn pixelmatch ours/$name theirs/$name out/$name 0.1 || true
           done
       - uses: actions/upload-artifact@v3
         with:
