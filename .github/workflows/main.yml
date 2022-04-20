@@ -125,9 +125,33 @@ jobs:
           mkdir out
           for file in ours/*; do 
             name=`basename $file`
-            yarn pixelmatch ours/$name theirs/$name out/$name 0.1 || true
+            yarn pixelmatch ours/$name theirs/$name out/$name 0.1 >> comment-body.txt || true 
           done
       - uses: actions/upload-artifact@v3
         with:
           name: screenshot-diff
           path: out/*.png
+
+      - id: get-comment-body
+        run: |
+          body="$(echo 'Visual Diff'; cat comment-body.txt)"
+          body="${body//'%'/'%25'}"
+          body="${body//$'\n'/'%0A'}"
+          body="${body//$'\r'/'%0D'}" 
+          echo "::set-output name=body::$body"
+
+      - name: Find Comment
+        uses: peter-evans/find-comment@v2
+        id: fc
+        with:
+          issue-number: ${{ github.event.pull_request.number }}
+          comment-author: 'github-actions[bot]'
+          body-includes: Visual Diff
+
+      - name: Create or update comment
+        uses: peter-evans/create-or-update-comment@v2
+        with:
+          comment-id: ${{ steps.fc.outputs.comment-id }}
+          issue-number: ${{ github.event.pull_request.number }}
+          body: ${{ steps.get-comment-body.outputs.body }}
+          edit-mode: replace
