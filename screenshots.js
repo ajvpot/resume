@@ -3,6 +3,8 @@ const puppeteer = require('puppeteer');
 (async () => {
     let browser = await puppeteer.launch({headless: true})
 
+    await new Promise(r => setTimeout(r, 5000));
+
     const page = await browser.newPage();
 
     await page.goto('http://127.0.0.1:3000/resume', {waitUntil: 'networkidle0'});
