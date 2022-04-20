@@ -76,7 +76,7 @@ jobs:
           set -x
           mkdir webroot
           mv build webroot/resume
-          yarn serve -s webroot &
+          yarn serve webroot &
           set +x
           while ! curl --output /dev/null --silent --head --fail http://127.0.0.1:3000/; do sleep 0.1 && echo -n .; done;
           set -x
