@@ -55,19 +55,18 @@ jobs:
   screenshot:
     runs-on: ubuntu-18.04
     needs: build
-    strategy:
-      matrix:
-        width: [ 1200, 992, 768, 600 ]
     steps:
       - uses: actions/download-artifact@v3
         with:
           name: build
-      - name: Screenshot Website
-        uses: swinton/screenshot-website@v1.x
+      - run: |-
+          mkdir webroot
+          mv build webroot/resume
+          yarn screenshot:ci
+      - uses: actions/upload-artifact@v3
         with:
-          source: https://github.com/swinton/screenshot-website
-          destination: screenshot-${{ matrix.width }}.png
-          width: ${{ matrix.width }}
+          name: screenshots
+          path: screenshot-*.png
 
   compare-screenshot:
     runs-on: ubuntu-18.04
