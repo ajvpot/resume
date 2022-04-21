@@ -129,13 +129,14 @@ jobs:
       - run: |-
           yarn add pixelmatch
           mkdir out
-          echo "Visual Diff" >> comment-body.txt
-          echo '```' >> comment-body.txt 
+          echo "## Visual Diff" >> comment-body.txt
           for file in ours/*; do 
             name=`basename $file`
+            echo "### $name" >> comment-body.txt
+            echo '```' >> comment-body.txt 
             yarn -s pixelmatch ours/$name theirs/$name out/$name 0.1 >> comment-body.txt || true 
+            echo '```' >> comment-body.txt
           done
-          echo '```' >> comment-body.txt
       - uses: actions/upload-artifact@v3
         with:
           name: screenshot-diff
