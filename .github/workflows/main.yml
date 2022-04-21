@@ -9,9 +9,14 @@ on:
 jobs:
   build:
     runs-on: ubuntu-18.04
+    outputs:
+      branch_name: ${{ steps.branch-name.outputs.current_branch }}
+
     steps:
       - uses: actions/checkout@v3
-
+      - name: Get branch name
+        id: branch-name
+        uses: tj-actions/branch-names@v5.2
       - name: Setup Node
         uses: actions/setup-node@v2-beta
         with:
