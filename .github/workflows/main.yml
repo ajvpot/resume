@@ -134,7 +134,7 @@ jobs:
             name=`basename $file`
             echo "### $name" >> comment-body.txt
             echo '```' >> comment-body.txt 
-            yarn -s pixelmatch ours/$name theirs/$name out/$name 0.1 >> comment-body.txt || true 
+            yarn -s pixelmatch ours/$name theirs/$name out/$name 0.1 >> comment-body.txt
             echo '```' >> comment-body.txt
           done
       - uses: actions/upload-artifact@v3
