@@ -4,8 +4,26 @@ import SectionItem from "./util/sectionItem";
 
 const experienceData = [
     {
+        heading: 'Security Engineer - LunaSec',
+        time: '2022 - present',
+        chips: [
+            {
+                label: 'Go',
+                color: 'primary',
+            },
+            {
+                label: 'TypeScript',
+                color: 'primary',
+            },
+            { label: 'AWS' },
+            { label: 'Hasura' },
+        ],
+        description: <ul style={{ margin: 0, paddingLeft: 20 }}>
+        </ul>,
+    },
+     {
         heading: 'Security Engineer II - Uber',
-        time: '2019 - present',
+        time: '2019 - 2022',
         chips: [
             {
                 label: 'Go',
