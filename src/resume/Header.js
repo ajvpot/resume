@@ -32,17 +32,17 @@ const styles = (theme) => ({
 const contacts = [
     {
         icon: <PhoneIcon />,
-        text: '(210) 643-0345',
+        text: '(210) 971-4040',
         props: {
             button: true,
             component: "a",
-            href: "tel:+12106430345",
+            href: "tel:+12109714040",
         },
         after: <MobileView>
             <ListItemSecondaryAction>
                 <IconButton
                     component="a"
-                    href="sms:+12106430345"
+                    href="sms:+12109714040"
                 >
                     <SmsIcon />
                 </IconButton>
