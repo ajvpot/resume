@@ -9,7 +9,7 @@ const skillsData = [
     },
     {
         heading: 'Software',
-        description: 'Git, GitLab CI, Docker, Kubernetes, Helm, Web Application Security, Azure, GCP, Debian-based Linux, macOS, Windows',
+        description: 'Git, GitLab CI, GitHub Actions, Docker, Kubernetes, Helm, Web Application Security, AWS, Azure, GCP, Unix/Linux, macOS, Windows',
     },
     {
         heading: 'Hardware',
