@@ -14,7 +14,7 @@ const styles = (theme) => ({
     rowWrap: {
         display: 'flex', flexWrap: 'wrap', margin: theme.spacing.unit,
     }, leftCol: {
-        flex: 1, minWidth: '300px', margin: theme.spacing.unit,
+        flex: 1, minWidth: '250px', margin: theme.spacing.unit,
     }, rightCol: {
         flex: 3, minWidth: '300px', margin: theme.spacing.unit,
     }
@@ -22,7 +22,7 @@ const styles = (theme) => ({
 
 class Resume extends Component {
     render() {
-        const {classes} = this.props;
+        const {classes, isPrinting} = this.props;
         return (<div>
                 <Header/>
                 <div className={classes.rowWrap}>
