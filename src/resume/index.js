@@ -12,48 +12,40 @@ import Typography from "@material-ui/core/Typography/Typography";
 
 const styles = (theme) => ({
     rowWrap: {
-        display: 'flex',
-        flexWrap: 'wrap',
-        margin: theme.spacing.unit,
-    },
-    leftCol: {
-        flex: 1,
-        minWidth: '300px',
-        margin: theme.spacing.unit,
-    },
-    rightCol: {
-        flex: 3,
-        minWidth: '300px',
-        margin: theme.spacing.unit,
+        display: 'flex', flexWrap: 'wrap', margin: theme.spacing.unit,
+    }, leftCol: {
+        flex: 1, minWidth: '300px', margin: theme.spacing.unit,
+    }, rightCol: {
+        flex: 3, minWidth: '300px', margin: theme.spacing.unit,
     }
 });
 
 class Resume extends Component {
     render() {
         const {classes} = this.props;
-        return (
-            <div>
-                <Header />
+        return (<div>
+                <Header/>
                 <div className={classes.rowWrap}>
                     <div className={classes.leftCol}>
-                        <Skills />
+                        <Skills/>
 
                         <Education/>
                         {/*<Awards />*/}
                     </div>
                     <div className={classes.rightCol}>
-                        <Projects />
-                        <Experience />
+                        <Projects/>
+                        <Experience/>
                     </div>
                 </div>
                 <Typography variant="caption">
                     This résumé is a React app. It is continuously deployed with GitHub Actions.
-                    <a href="https://github.com/ajvpot/resume">
-                        View the source code.
-                    </a>
+                    {isPrinting ? "View the source code at https://github.com/ajvpot/resume." :
+                        <a href="https://github.com/ajvpot/resume">
+                            View the source code.
+                        </a>}
+
                 </Typography>
-            </div>
-        );
+            </div>);
     }
 }
 
