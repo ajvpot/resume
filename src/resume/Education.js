@@ -12,7 +12,7 @@ const educationData = [
         </React.Fragment>
     },
     {
-        heading: 'Ronald Reagan High School',
+        heading: 'Reagan High School',
         time: '2011 - 2015',
         description: 'San Antonio, TX'
     },
