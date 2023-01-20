@@ -3,14 +3,14 @@ import Section from "./util/section";
 import SectionItem from "./util/sectionItem";
 
 const educationData = [
-    /*{
+    {
         heading: 'Texas State University',
         time: '2015 - 2017',
         description: <React.Fragment>
-            BS Sound Recording Technology (Incomplete)<br />
-            BFA Vocal Performance (Incomplete)
+            Sound Recording Technology<br />
+            Vocal Performance
         </React.Fragment>
-    },*/
+    },
     {
         heading: 'Ronald Reagan High School',
         time: '2011 - 2015',
