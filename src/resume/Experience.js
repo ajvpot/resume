@@ -35,6 +35,8 @@ const experienceData = [
             },
             { label: 'Cadence' },
             { label: 'Bazel' },
+            { label: 'AWS' },
+            { label: 'GCP' },
         ],
         description: <ul style={{ margin: 0, paddingLeft: 20 }}>
             <li>Owned end-to-end delivery of pipeline for performing SBOM analysis and vulnerability assessment on containers.
@@ -60,6 +62,7 @@ const experienceData = [
             { label: 'React' },
             { label: 'Redux' },
             { label: 'Node.js' },
+            { label: 'Azure' },
         ],
         description: <ul style={{ margin: 0, paddingLeft: 20 }}>
             <li>Created automatically generated documentation for component catalogs and a self-generating React.js Icon package</li>
