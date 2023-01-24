@@ -19,6 +19,9 @@ const experienceData = [
             { label: 'Hasura' },
         ],
         description: <ul style={{ margin: 0, paddingLeft: 20 }}>
+            <li>Designed and implemented relational database structure for modeling third party software dependencies and vulnerabilities.</li>
+            <li>Designed Static Code Analysis system capable of reducing noise in vulnerability reports by removing vulnerabilities that can not be exploited.</li>
+            <li>Developed product fit within the SSDLC and developer integrations.</li>
         </ul>,
     },
      {
