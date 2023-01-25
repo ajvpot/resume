@@ -20,8 +20,7 @@ const experienceData = [
         ],
         description: <ul style={{ margin: 0, paddingLeft: 20 }}>
             <li>Designed and implemented relational database structure for modeling third party software dependencies and vulnerabilities.</li>
-            <li>Designed Static Code Analysis system capable of reducing noise in vulnerability reports by removing vulnerabilities that can not be exploited.</li>
-            <li>Developed product fit within the SSDLC and developer integrations.</li>
+            <li>Designed Static Code Analysis system capable of reducing noise in vulnerability reports by deprioritizing vulnerabilities that are unlikely to be exploited.</li>
         </ul>,
     },
      {
@@ -99,12 +98,8 @@ const experienceData = [
                     of the Minecraft server using Python and Twisted</li>
                 <li>Contributed to developing automated packet analysis system to detect prevent unauthorized game modification</li>
                 <li>Worked with clients to develop solutions from idea to final product</li>
-                <li>Designed WordPress landing pages and custom solutions</li>
-            </ul>
-            Designed web applications including:
-            <ul style={{ margin: 0, paddingLeft: 20 }}>
-                <li>Custom Twilio IVR with support for agents, queueing, and call distribution</li>
-                <li>Digital Signage platform with Instagram integration and administration portal</li>
+                <li>Designed Custom Twilio IVR with support for agents, queueing, and call distribution</li>
+                <li>Designed Digital Signage platform with Instagram integration and administration portal</li>
             </ul>
         </React.Fragment>,
     }

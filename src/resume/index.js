@@ -33,7 +33,7 @@ class Resume extends Component {
                         {/*<Awards />*/}
                     </div>
                     <div className={classes.rightCol}>
-                        <Projects/>
+                        <Projects isPrinting={isPrinting}/>
                         <Experience/>
                     </div>
                 </div>
