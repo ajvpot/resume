@@ -16,11 +16,14 @@ const experienceData = [
                 color: 'primary',
             },
             { label: 'AWS' },
+            { label: 'GraphQL' },
+            { label: 'DataDog' },
             { label: 'Hasura' },
         ],
         description: <ul style={{ margin: 0, paddingLeft: 20 }}>
             <li>Designed and implemented relational database structure for modeling third party software dependencies and vulnerabilities.</li>
             <li>Designed Static Code Analysis system capable of reducing noise in vulnerability reports by deprioritizing vulnerabilities that are unlikely to be exploited.</li>
+            <li>Operated metrics, logging, and monitoring pipelines using DataDog with AWS Kinesis.</li>
         </ul>,
     },
      {
@@ -44,7 +47,7 @@ const experienceData = [
             <li>Owned end-to-end delivery of pipeline for performing SBOM analysis and vulnerability assessment on containers.
             The system has analyzed over 15k containers per hour.</li>
             <li>Built asset inventory platform that stores and indexes metadata for over 650k assets</li>
-            <li>Owned vulnerability assessment service responsible for comparing data from scans and asset inventory with vulnerability information</li>
+            <li>Owned vulnerability assessment service responsible for scanning assets for vulnerabilities</li>
             <li>Responsible for company-wide response to major vulnerabilities</li>
         </ul>,
     },
