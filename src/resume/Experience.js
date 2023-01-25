@@ -5,7 +5,7 @@ import SectionItem from "./util/sectionItem";
 const experienceData = [
     {
         heading: 'Security Engineer - LunaSec',
-        time: '2022 - present',
+        time: '2022 - 2023',
         chips: [
             {
                 label: 'Go',
