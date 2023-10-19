@@ -13,7 +13,7 @@ jobs:
       branch_name: ${{ steps.branch-name.outputs.current_branch }}
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Get branch name
         id: branch-name
         uses: tj-actions/branch-names@v6.5
@@ -60,7 +60,7 @@ jobs:
     needs:
       - build
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: actions/download-artifact@v3
         with:
           name: build
