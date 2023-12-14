@@ -34,7 +34,7 @@ jobs:
         env:
           REACT_APP_GIT_SHA: ${{ github.SHA }}
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: build
           path: build/
@@ -87,7 +87,7 @@ jobs:
           while ! curl --output /dev/null --silent --head --fail http://127.0.0.1:3000/; do sleep 0.1 && echo -n .; done;
           set -x
           yarn screenshot
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: screenshots
           path: screenshot-*.png
@@ -137,7 +137,7 @@ jobs:
             yarn -s pixelmatch ours/$name theirs/$name out/$name 0.1 >> comment-body.txt
             echo '```' >> comment-body.txt
           done
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: screenshot-diff
           path: out/*.png
