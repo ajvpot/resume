@@ -45,7 +45,7 @@ jobs:
     needs: build
     concurrency: production
     steps:
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           name: build
           path: build
@@ -61,7 +61,7 @@ jobs:
       - build
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           name: build
           path: build/
@@ -113,7 +113,7 @@ jobs:
           key: ${{ runner.os }}-yarn-sc
           restore-keys: |
             ${{ runner.os }}-yarn-sc
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           name: screenshots
           path: ours
