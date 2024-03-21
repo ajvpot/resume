@@ -16,8 +16,8 @@ const skillsData = [
         description: 'Arduino, PlatformIO, Embedded Linux, RTOS, Espressif ESP-IDF, PCB Design, PCB Layout'
     },
     {
-        heading: 'Event Production',
-        description: 'Sound engineering, lighting control, automated show control'
+        heading: 'Other',
+        description: 'Sound engineering, lighting control, automated show control, GMRS Radio Operator'
     }
 ];
 
