@@ -23,7 +23,7 @@
     "concurrently": "8.2.2",
     "puppeteer": "13.7.0",
     "react-to-print": "2.15.1",
-    "serve": "14.2.2"
+    "serve": "14.2.3"
   },
   "homepage": "https://vanderpot.com/resume/",
   "browserslist": [
