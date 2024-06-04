@@ -117,7 +117,7 @@ jobs:
         with:
           name: screenshots
           path: ours
-      - uses: dawidd6/action-download-artifact@v3
+      - uses: dawidd6/action-download-artifact@v4
         with:
           github_token: ${{secrets.GH_TOKEN}}
           workflow: main.yml
