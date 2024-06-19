@@ -17,7 +17,7 @@ const skillsData = [
     },
     {
         heading: 'Other',
-        description: 'Sound engineering, lighting control, automated show control, GMRS Radio Operator'
+        description: 'Laser Safety Officer, Laser Light Show Operator, Sound engineering, lighting control, automated show control, GMRS Radio Operator'
     }
 ];
 
